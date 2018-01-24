@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Review Order</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="bg-style">
+  <ion-row text-center>
+    <ion-col>
+          <button ion-button round (click)="placeOrder($event)">Place Order</button>
+    </ion-col>
+  </ion-row>
+
+  <ion-item-group>
+    <ion-item-divider color="light">Items in cart</ion-item-divider>
+    <ion-list *ngFor="let product of products">
+      <ion-row>
+        <ion-col>
+          <ion-item>{{ product.base.name }} - {{ product.base.packing }}</ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item >{{ product.count }}</ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-list>
+  </ion-item-group>
+</ion-content>

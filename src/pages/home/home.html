@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content  class="bg-style" *ngIf="account != undefined">
+    <ion-list inset  no-lines>
+        <ion-item>  </ion-item>
+        <ion-item>  </ion-item>    
+  </ion-list>        
+    
+    <div padding-top text-center *ngIf="user">
+        <img src="http://www.gravatar.com/avatar?d=mm&s=140" alt="avatar">
+        <h2>{{user.first_name}}</h2>  
+  <ion-list inset *ngIf="user_type != 'employee'">
+    <ion-item>Company Name: {{account.company_name}} </ion-item>
+    <ion-item>Company Address: {{account.company_address}}, PIN: {{account.pin_code}}</ion-item>
+    <ion-item> Mobile Number: {{account.mobile_number}}</ion-item>
+    <ion-item> GSTIN: {{account.GSTIN}}</ion-item>
+    <ion-item> PAN: {{account.PAN}}</ion-item>
+    <ion-item> Email: {{user.email}}</ion-item>
+  </ion-list>
+  <ion-list inset *ngIf="user_type == 'employee'">
+      <ion-item>Company Name: {{account.company_name}} </ion-item>
+      <ion-item> Mobile Number: {{user.mobile_no}}</ion-item>
+      <ion-item> Email: {{user.email}}</ion-item>
+      <ion-item> User Type: {{user_type}}</ion-item>
+    </ion-list>
+</div>  
+
+</ion-content>

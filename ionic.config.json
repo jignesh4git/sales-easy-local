@@ -1,0 +1,8 @@
+{
+  "name": "saleseasy",
+  "app_id": "37f2aebb",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}

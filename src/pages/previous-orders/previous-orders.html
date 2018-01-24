@@ -1,0 +1,24 @@
+<ion-header>
+    <ion-navbar>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>Orders</ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content class="bg-style" padding>
+    <ion-card ion-item *ngFor="let order of orders" (click)="itemTapped($event, order)">
+      <ion-card-header>
+        Invoice Id: {{ order.invoice_id}}
+      </ion-card-header>
+      <ion-card-content>
+          <h3>Fulfilled by: {{ order.connected_partner.company_name}}</h3>
+          <h3>Mobile no: {{ order.connected_partner.mobile_number }}</h3>          
+        <h3>Order date: {{ order.order_date }}</h3>
+        <h3>Status: {{order.order_status}}</h3>
+        <h3>Delivery Date: {{order.delivery_date}}</h3>        
+        <h3>Bill Total: {{order.bill_total}}</h3>
+      </ion-card-content>
+    </ion-card>
+  </ion-content>

@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Manufacturers</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding  class="bg-style">
+  <ion-card ion-item *ngFor="let manufacturer of manufacturers" (click)="itemTapped($event, manufacturer)">
+    <ion-card-header>
+      {{ manufacturer.company_name }}
+    </ion-card-header>
+
+    <ion-card-content>
+      {{ manufacturer.company_address }}
+    </ion-card-content>
+  </ion-card>
+</ion-content>

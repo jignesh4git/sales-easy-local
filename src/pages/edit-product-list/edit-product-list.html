@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Products</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="bg-style" padding>
+  <ion-card ion-item *ngFor="let product of products">
+    <ion-card-header>
+      {{ product.base.name }}
+    </ion-card-header>
+    <ion-card-content>
+      {{ product.base.packing }} (code : {{product.base.code}})
+      Price: {{ product.selling_price }} 
+    </ion-card-content>
+  </ion-card>
+</ion-content>

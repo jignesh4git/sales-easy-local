@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Products</ion-title>
+    <ion-buttons end>
+        <button ion-button (click)="checkout($event)"> Checkout </button>
+      </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content class="bg-style" padding>
+    <ion-card ion-item *ngFor="let product of products">
+      <ion-card-header>
+        <ion-row align-items-center> {{ product.base.name }} </ion-row>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-row align-items-center>
+          <ion-col>
+            <ion-row align-items-center> Packing: {{ product.base.packing }} </ion-row>
+            <ion-row align-items-center> Code: {{ product.base.code}} </ion-row>
+          </ion-col>
+          <ion-col>
+            <ion-col>
+              <button ion-button round icon-only color="danger" icon-left (click)="decrease($event, product)">
+                <ion-icon name="remove"></ion-icon>
+              </button>
+            </ion-col>
+            <ion-item>
+              <ion-input type="number" (ionChange)='onChangeCount($event, product)' value="{{product.count}}"> </ion-input>
+            </ion-item>
+            <ion-col>
+              <button ion-button round icon-only color="secondary" icon-right (click)="increase($event, product)">
+                <ion-icon name="add"></ion-icon>
+              </button>
+            </ion-col>
+          </ion-col>
+
+        </ion-row>
+      </ion-card-content>
+    </ion-card>
+</ion-content>

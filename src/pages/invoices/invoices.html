@@ -1,0 +1,30 @@
+<ion-header>
+    <ion-navbar>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>Invoices</ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content>
+    <ion-list ion-item *ngFor="let item of invoices">
+        <ion-item-group>
+            <ion-item color="light"> {{item.connected_partner.company_name}} </ion-item>
+              <ion-item>
+                  <h3>Order Id: {{item.id}}</h3>
+                  <h3>Invoice Id: {{item.invoice_id}} </h3>
+                  <h3>Order Date: {{ item.order_date }}</h3>
+                <h3>Status: {{ item.order_status }}</h3>
+                <h3>Delivery date: {{item.delivery_date}}</h3>                
+              <h3>Item Total: {{item.item_total}}</h3>
+              <h3>S GST Total: {{item.s_gst_total}}</h3>
+              <h3>C GST Total: {{item.c_gst_total}}</h3>
+              <h3>{{item.other_charge_description}} {{item.other_charge}}</h3>
+              
+              <h3>Bill total: {{item.bill_total}} </h3>
+              </ion-item>
+              </ion-item-group>
+    </ion-list> 
+</ion-content>    
+    
